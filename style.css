@@ -1,0 +1,249 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    --background-color1: ghostwhite;
+    --font-color: ghostwhite;
+    width: 100%;
+    height: 100%;
+    font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
+}
+
+body, div, span, label, h1, h2, h3, h4, input, p, b, i, li, ul, section, header, footer, form, fieldset, legend, a {
+    margin: 0;
+    padding: 0;
+}
+
+
+
+/* ----- HEADER SECTION ----- */
+
+.header {
+    width: 100%;
+    background-color: transparent;
+    padding: .5rem;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    transition: background-color 1s;
+}
+
+#checkbox {
+    display: none;
+}
+
+.menu-toggle span {
+    font-size: 3.5rem;
+    color: var(--font-color);
+    cursor: pointer;
+}
+
+.header__ul {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-height: 0;
+    opacity: 0;
+    transition: max-height .8s ease-in-out, opacity .3s ease-in-out;
+}
+
+#checkbox:checked ~ .header__ul {
+    max-height: 500px;
+    opacity: 1;
+    backdrop-filter: blur(5px);
+}
+
+.header__li {
+    list-style: none;
+    margin: .8rem 0;
+}
+
+.header__a {
+    text-decoration: none;
+    color: var(--font-color);
+    font-size: 1.15rem
+}
+
+.checkbox-label__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header__logo {
+    width: 5rem;
+    max-width: 120px;
+}
+
+.header__a-logo {
+    display: inline-block;
+    width: fit-content;
+}
+
+.scrolled {
+    background-color: #0007;
+}
+
+
+
+/* ----- HOME SECTION ----- */
+
+.home-section {
+    width: 100%;
+    height: 110vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    /*
+    background-color: ghostwhite;
+    background-image: url(images/iphone2.jpg);
+    background-position: center;
+    background-size: cover;
+    */
+
+    position: relative;
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 90%, rgba(0, 0, 0, 0) 100%);
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 90%, rgba(0, 0, 0, 0) 100%);
+}
+
+.iphone {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -20;
+    position: absolute;
+    top: 0;
+    left: 0;
+    filter: blur(1px);
+}
+
+.home__titles-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to bottom, #fff8, transparent);
+}
+
+.home__titles {
+    margin-top: 10%;
+}
+
+.home__h2 {
+    font-size: 3rem;
+    text-align: center;
+    color: var(--font-color);
+    text-shadow: 5px 5px 20px #000;
+}
+
+.home__paragraph-container {
+    width: 80%;
+    margin-top: 10%;
+}
+
+.home__paragraph {
+    text-align: center;
+    font-size: 1.1rem;
+    color: var(--font-color);
+    text-shadow: 5px 5px 20px #000;
+    mix-blend-mode: luminosity;
+    font-weight: bold;
+}
+
+.bottom-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    justify-content: end;
+    align-items: center;
+    margin-bottom: 10vh;
+}
+
+#bottom-icon {
+    color: var(--font-color);
+    font-size: 4rem;
+    animation: temblar 1.5s .2s infinite ease-in-out;
+}
+
+.bottom-container {
+    opacity: 1;
+}
+
+@keyframes temblar {
+    0% {
+        transform: translateY(0);
+    }
+
+    40% {
+        transform: translateY(-15px);
+    }
+
+    80% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+
+
+/* ----- PHONES SECTION ----- */
+
+.main-section {
+    width: 100%;
+    height: fit-content;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+.phones-section, .service-section {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.service-titles, .phones-titles {
+    width: 100%;
+    text-align: center;
+    margin-top: 35%;
+    color: var(--font-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.service-title, .phones-title {
+    font-size: 2.5rem;
+}
+
+.service-paragraph, .phones-paragraph {
+    max-width: 80%;
+    margin-top: 5%;
+}
+
+.video2, .video1 {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -20;
+    filter: blur(4px) contrast(1.2) brightness(.3);
+    opacity: .85;
+    object-fit: cover;
+}

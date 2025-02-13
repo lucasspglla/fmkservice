@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FMK</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <input type="checkbox" id="checkbox">
+        <div class="checkbox-label__container">
+            <a href="#" class="header__a-logo">
+                <img src="images/logo.png" alt="logo-fmk" class="header__logo">
+            </a>
+            <label for="checkbox" class="menu-toggle">
+                <span class="material-icons menu-icon">
+                    menu
+                </span>
+            </label>
+        </div>
+        <ul class="header__ul">
+            <li class="header__li">
+                <a href="#" class="header__a">
+                    Home
+                </a>
+            </li>
+            <li class="header__li">
+                <a href="#" class="header__a">
+                    About
+                </a>
+            </li>
+            <li class="header__li">
+                <a href="#" class="header__a">
+                    Contact
+                </a>
+            </li>
+            <li class="header__li">
+                <a href="#" class="header__a">
+                    Register
+                </a>
+            </li>
+        </ul>
+    </header>
+    <section class="home-section">
+        <img src="images/iphone2.jpg" alt="iphone" class="iphone">
+        <div class="home__titles-wrapper">
+            <div class="home__titles">
+                <h2 class="home__h2 home__h2-1">Phones</h2>
+                <h2 class="home__h2 home__h2-2">&</h2>
+                <h2 class="home__h2 home__h2-3">Service</h2>
+            </div>
+            <div class="home__paragraph-container">
+                <p class="home__paragraph">
+                    Venta y reparación de dispositivos moviles
+                </p>
+            </div>
+        </div>
+        <div class="bottom-wrapper">
+            <div class="bottom-container">
+                <span class="material-icons bottom-icon" id="bottom-icon">
+                    keyboard_arrow_down
+                </span>
+            </div>
+        </div>
+    </section>
+    <section class="main-section">
+        <section class="phones-section">
+            <video src="videos/phones-video.mp4" class="video1" autoplay loop></video>
+            <div class="phones-titles">
+                <h2 class="phones-title">
+                    Celulares
+                </h2>
+                <p class="phones-paragraph">
+                    Tenemos stock de una gran variedad de celulares al mejor precio.
+                </p>
+            </div>
+        </section>
+        <section class="service-section">
+            <video src="videos/service-video.mp4" class="video2" autoplay loop></video>
+            <div class="service-titles">
+                <h2 class="service-title">
+                    Servicio tecnico
+                </h2>
+                <p class="service-paragraph">
+                    Además de la venta de celulares, somos expertos en brindarle servicio tecnico a todo tipo de celulares.
+                </p>
+            </div>
+        </section>
+    </section>
+
+    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</body>
+</html>
