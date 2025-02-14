@@ -160,3 +160,11 @@ document.addEventListener("DOMContentLoaded", () => {
         lightbox.classList.remove("active");
     });
 });
+
+
+function fixHeight() {
+    document.documentElement.style.setProperty('--real-height', `${window.innerHeight}px`);
+}
+
+window.addEventListener('resize', fixHeight);
+fixHeight();
