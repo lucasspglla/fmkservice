@@ -366,7 +366,7 @@ body, div, span, label, h1, h2, h3, h4, input, p, b, i, li, ul, section, header,
     width: 85%;
     margin: 1em 0;
     display: grid;
-    height: calc(var(--real-height) * 3.5);
+    height: 2200px;
     grid-template-columns: 1fr;
     place-items: center;
 }
@@ -384,7 +384,7 @@ body, div, span, label, h1, h2, h3, h4, input, p, b, i, li, ul, section, header,
 
 .gallery-container img {
     position: absolute;
-    height: calc(var(--real-height) * 0.5);
+    height: 90%;
     transition: opacity 0.5s ease-in-out;
 }
 
