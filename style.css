@@ -2,13 +2,17 @@
     box-sizing: border-box;
 }
 
+body, html {
+    width: 100%;
+    height: auto;
+    min-height: var(--real-height);
+    overflow-x: hidden;
+}
+
 body {
     --background-color1: ghostwhite;
     --font-color: ghostwhite;
-    width: 100%;
-    height: 100%;
     font-family: 'Montserrat', sans-serif;
-    overflow-x: hidden;
     background-color: black;
 }
 

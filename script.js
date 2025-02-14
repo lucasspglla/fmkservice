@@ -167,4 +167,5 @@ function fixHeight() {
 }
 
 window.addEventListener('resize', fixHeight);
+window.addEventListener('orientationchange', fixHeight);
 fixHeight();
