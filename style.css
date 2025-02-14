@@ -96,7 +96,7 @@ body, div, span, label, h1, h2, h3, h4, input, p, b, i, li, ul, section, header,
 
 .home-section {
     width: 100%;
-    height: 110dvh;
+    height: 110svh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -212,7 +212,7 @@ body, div, span, label, h1, h2, h3, h4, input, p, b, i, li, ul, section, header,
     height: 100%;
     justify-content: end;
     align-items: center;
-    margin-bottom: 10dvh;
+    margin-bottom: 10svh;
 }
 
 #bottom-icon {
@@ -259,7 +259,7 @@ body, div, span, label, h1, h2, h3, h4, input, p, b, i, li, ul, section, header,
 
 .phones-section, .service-section {
     width: 100%;
-    height: 100dvh;
+    height: 100svh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -339,7 +339,7 @@ body, div, span, label, h1, h2, h3, h4, input, p, b, i, li, ul, section, header,
 
 .gallery-section {
     width: 100%;
-    min-height: 100dvh;
+    min-height: 100svh;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -367,7 +367,7 @@ body, div, span, label, h1, h2, h3, h4, input, p, b, i, li, ul, section, header,
     width: 85%;
     margin: 1em 0;
     display: grid;
-    min-height: 350dvh;
+    min-height: 350svh;
     grid-template-columns: 1fr;
     place-items: center;
 }
@@ -385,7 +385,7 @@ body, div, span, label, h1, h2, h3, h4, input, p, b, i, li, ul, section, header,
 
 .gallery-container img {
     position: absolute;
-    height: 50dvh;
+    height: 50svh;
     transition: opacity 0.5s ease-in-out;
 }
 
@@ -398,7 +398,7 @@ body, div, span, label, h1, h2, h3, h4, input, p, b, i, li, ul, section, header,
     top: 0;
     left: 0;
     width: 100vw;
-    height: 100vh;
+    height: 100svh;
     background: rgba(0, 0, 0, 0.8);
     display: flex;
     justify-content: center;
