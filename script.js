@@ -1,20 +1,34 @@
+function setFullHeight() {
+    const height = window.visualViewport ? window.visualViewport.height : window.innerHeight;
+    document.documentElement.style.setProperty('--real-height', `${height}px`);
+}
+
+window.addEventListener('resize', setFullHeight);
+window.addEventListener('orientationchange', setFullHeight);
+window.addEventListener('load', setFullHeight);
+setFullHeight();
+
 document.addEventListener("scroll", function() {
     let header = document.querySelector(".header");
     let scrollY = window.scrollY;
     let triggerHeight = window.innerHeight * 0.5;
 
     if (scrollY > triggerHeight) {
-        header.classList.add("scrolled")
-    }
-
-    else {
-        header.classList.remove("scrolled")
+        header.classList.add("scrolled");
+    } else {
+        header.classList.remove("scrolled");
     }
 });
 
 document.addEventListener("DOMContentLoaded", function () {
     gsap.registerPlugin(ScrollTrigger);
 
+    setTimeout(() => {
+        iniciarAnimacionesGSAP();
+    }, 50);
+});
+
+function iniciarAnimacionesGSAP() {
     gsap.to(".bottom-container", {
         opacity: 0,
         duration: 1,
@@ -25,8 +39,6 @@ document.addEventListener("DOMContentLoaded", function () {
             toggleActions: "play reverse play reverse",
         }
     });
-
-
 
     gsap.utils.toArray([".cheap-img", ".destornillador"]).forEach(element => {
         gsap.to(element, {
@@ -74,7 +86,6 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
     });
-    
 
     gsap.utils.toArray([".phones-paragraph", ".service-paragraph"]).forEach(element => {
         gsap.to(element, {
@@ -89,27 +100,13 @@ document.addEventListener("DOMContentLoaded", function () {
                 toggleActions: "play reverse play reverse",
             }
         });
-    });    
-});
+    });
+}
 
-document.addEventListener("DOMContentLoaded", function () {
-    let video = document.querySelector(".video1");
+function configurarVideoObserver(videoClass) {
+    let video = document.querySelector(videoClass);
 
-    let observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                video.play();
-            } else {
-                video.pause();
-            }
-        });
-    }, { threshold: 0.5 });
-
-    observer.observe(video);
-});
-
-document.addEventListener("DOMContentLoaded", function () {
-    let video = document.querySelector(".video2");
+    if (!video) return; // Evita errores si no existe el video
 
     let observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -122,9 +119,12 @@ document.addEventListener("DOMContentLoaded", function () {
     }, { threshold: 0.5 });
 
     observer.observe(video);
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+    configurarVideoObserver(".video1");
+    configurarVideoObserver(".video2");
 });
-
-
 
 document.addEventListener("DOMContentLoaded", () => {
     const images = document.querySelectorAll(".gallery-container");
@@ -160,14 +160,3 @@ document.addEventListener("DOMContentLoaded", () => {
         lightbox.classList.remove("active");
     });
 });
-
-
-function setFullHeight() {
-    const height = window.visualViewport ? window.visualViewport.height : window.innerHeight;
-    document.documentElement.style.setProperty('--real-height', `${height}px`);
-}
-
-window.addEventListener('resize', setFullHeight);
-window.addEventListener('orientationchange', setFullHeight);
-window.addEventListener('load', setFullHeight);
-setFullHeight();
