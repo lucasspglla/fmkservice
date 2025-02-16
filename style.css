@@ -3,8 +3,6 @@
 }
 
 body, html {
-    width: 100%;
-    height: 100%;
     overflow-x: hidden;
 }
 
@@ -99,7 +97,7 @@ body, div, span, label, h1, h2, h3, h4, input, p, b, i, li, ul, section, header,
 
 .home-section {
     width: 100%;
-    height: calc(var(--real-height) * 1.1);
+    height: 110svh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -130,7 +128,7 @@ body, div, span, label, h1, h2, h3, h4, input, p, b, i, li, ul, section, header,
 }
 
 .home__titles {
-    margin-top: 10%;
+    margin-top: 20%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -215,7 +213,7 @@ body, div, span, label, h1, h2, h3, h4, input, p, b, i, li, ul, section, header,
     height: 100%;
     justify-content: end;
     align-items: center;
-    margin-bottom: calc(var(--real-height) * 0.10)
+    margin-bottom: 10svh
 }
 
 #bottom-icon {
@@ -262,7 +260,7 @@ body, div, span, label, h1, h2, h3, h4, input, p, b, i, li, ul, section, header,
 
 .phones-section, .service-section {
     width: 100%;
-    height: var(--real-height);
+    height: 100svh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -347,11 +345,7 @@ body, div, span, label, h1, h2, h3, h4, input, p, b, i, li, ul, section, header,
     flex-direction: column;
     align-items: center;
     font-size: 1.4rem;
-}
-
-.gallery-title {
-    color: var(--font-color);
-    margin: 2rem;
+    margin-top: 20%;
 }
 
 .gallery-wrapper-father {
@@ -363,6 +357,15 @@ body, div, span, label, h1, h2, h3, h4, input, p, b, i, li, ul, section, header,
     justify-content: center;
     background-color: #2d2d2d;
     border-radius: 20px;
+    opacity: 0;
+    transform: translateY(100px) scale(.7);
+}
+
+.gallery-title {
+    color: var(--font-color);
+    margin: 2rem;
+    opacity: 0;
+    transform: translateY(100px) scale(.7);
 }
 
 .gallery-wrapper-son {
@@ -400,7 +403,7 @@ body, div, span, label, h1, h2, h3, h4, input, p, b, i, li, ul, section, header,
     top: 0;
     left: 0;
     width: 100vw;
-    height: var(--real-height);
+    height: 100dvh;
     background: rgba(0, 0, 0, 0.8);
     display: flex;
     justify-content: center;
@@ -419,4 +422,94 @@ body, div, span, label, h1, h2, h3, h4, input, p, b, i, li, ul, section, header,
 .lightbox.active {
     opacity: 1;
     pointer-events: auto;
+}
+
+.gallery-h2 {
+    font-size: 3.5em;
+    color: var(--font-color);
+    text-wrap: wrap;
+    margin-bottom: .2em;
+    margin: 2rem 0;
+}
+
+.gallery-h2-1, .gallery-h2-2, .gallery-h2-3 {
+    opacity: 0;
+    transform: translateX(-110%) scale(.7);
+}
+
+.gallery-h2-container {
+    margin: 3rem .2em;
+    margin-bottom: 0;
+}
+
+.gallery-h3-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0;
+    transform: scale(.8);
+}
+
+.gallery__ig-logo {
+    width: 10%;
+}
+
+.gallery-h3 {
+    color: var(--font-color);
+    margin: 1rem;
+    margin-top: 0;
+}
+
+.gallery-h3-a {
+    color: inherit;
+}
+
+
+
+/* ----- CONTACT SECTION ----- */
+
+.contact-section {
+    width: 100%;
+    height: 1000px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: .8rem;
+}
+
+.contact-title {
+    color: var(--font-color);
+    font-size: 3rem;
+    margin-top: 8rem;
+}
+
+.social-media-wrapper {
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-color: #2d2d2d;
+    border-radius: 20px;
+    padding: 2rem 0;
+}
+
+.social-media-container {
+    width: 95%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1em;
+    border-radius: 20px;
+    background-color: #6b6b6b;
+    padding: 8% 0;
+    position: relative;
+}
+
+.logo {
+    width: 15%;
+    position: absolute;
+    left: 10%;
 }

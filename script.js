@@ -1,34 +1,20 @@
-function setFullHeight() {
-    const height = window.visualViewport ? window.visualViewport.height : window.innerHeight;
-    document.documentElement.style.setProperty('--real-height', `${height}px`);
-}
-
-window.addEventListener('resize', setFullHeight);
-window.addEventListener('orientationchange', setFullHeight);
-window.addEventListener('load', setFullHeight);
-setFullHeight();
-
 document.addEventListener("scroll", function() {
     let header = document.querySelector(".header");
     let scrollY = window.scrollY;
     let triggerHeight = window.innerHeight * 0.5;
 
     if (scrollY > triggerHeight) {
-        header.classList.add("scrolled");
-    } else {
-        header.classList.remove("scrolled");
+        header.classList.add("scrolled")
+    }
+
+    else {
+        header.classList.remove("scrolled")
     }
 });
 
 document.addEventListener("DOMContentLoaded", function () {
     gsap.registerPlugin(ScrollTrigger);
 
-    setTimeout(() => {
-        iniciarAnimacionesGSAP();
-    }, 50);
-});
-
-function iniciarAnimacionesGSAP() {
     gsap.to(".bottom-container", {
         opacity: 0,
         duration: 1,
@@ -39,7 +25,7 @@ function iniciarAnimacionesGSAP() {
             toggleActions: "play reverse play reverse",
         }
     });
-
+    
     gsap.utils.toArray([".cheap-img", ".destornillador"]).forEach(element => {
         gsap.to(element, {
             y: 0,
@@ -72,7 +58,7 @@ function iniciarAnimacionesGSAP() {
         });
     });
 
-    gsap.utils.toArray([".phones-title", ".service-title"]).forEach(element => {
+    gsap.utils.toArray([".phones-title", ".service-title", ".gallery-wrapper-father", "gallery-h2-1", "gallery-h2-2", "gallery-h2-3"]).forEach(element => {
         gsap.to(element, {
             y: 0,
             opacity: 1,
@@ -86,8 +72,8 @@ function iniciarAnimacionesGSAP() {
             }
         });
     });
-
-    gsap.utils.toArray([".phones-paragraph", ".service-paragraph"]).forEach(element => {
+    
+    gsap.utils.toArray([".phones-paragraph", ".service-paragraph", ".gallery-title"]).forEach(element => {
         gsap.to(element, {
             y: 0,
             opacity: 1,
@@ -100,13 +86,38 @@ function iniciarAnimacionesGSAP() {
                 toggleActions: "play reverse play reverse",
             }
         });
+    }); 
+
+    gsap.utils.toArray([".gallery-h2-1", ".gallery-h2-2", ".gallery-h2-3"]).forEach(element => {
+        gsap.to(element, {
+            x: 0,
+            opacity: 1,
+            scale: 1,
+            duration: 2,
+            ease: "power2.out",
+            scrollTrigger: {
+                trigger: element,
+                start: "top 75%",
+                toggleActions: "play reverse play reverse",
+            }
+        });
+    }); 
+
+    gsap.to(".gallery-h3-container", {
+        opacity: 1,
+        scale: 1,
+        duration: 1.5,
+        ease: "power2.out",
+        scrollTrigger: {
+            trigger: ".gallery-h3-container",
+            start: "top 75%",
+            toggleActions: "play reverse play reverse",
+        }
     });
-}
+});
 
-function configurarVideoObserver(videoClass) {
-    let video = document.querySelector(videoClass);
-
-    if (!video) return; // Evita errores si no existe el video
+document.addEventListener("DOMContentLoaded", function () {
+    let video = document.querySelector(".video1");
 
     let observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -119,12 +130,25 @@ function configurarVideoObserver(videoClass) {
     }, { threshold: 0.5 });
 
     observer.observe(video);
-}
+});
 
 document.addEventListener("DOMContentLoaded", function () {
-    configurarVideoObserver(".video1");
-    configurarVideoObserver(".video2");
+    let video = document.querySelector(".video2");
+
+    let observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                video.play();
+            } else {
+                video.pause();
+            }
+        });
+    }, { threshold: 0.5 });
+
+    observer.observe(video);
 });
+
+
 
 document.addEventListener("DOMContentLoaded", () => {
     const images = document.querySelectorAll(".gallery-container");
