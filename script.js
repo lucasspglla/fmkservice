@@ -162,10 +162,12 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-function fixHeight() {
-    document.documentElement.style.setProperty('--real-height', `${window.innerHeight}px`);
+function setFullHeight() {
+    const height = window.visualViewport ? window.visualViewport.height : window.innerHeight;
+    document.documentElement.style.setProperty('--real-height', `${height}px`);
 }
 
-window.addEventListener('resize', fixHeight);
-window.addEventListener('orientationchange', fixHeight);
-fixHeight();
+window.addEventListener('resize', setFullHeight);
+window.addEventListener('orientationchange', setFullHeight);
+window.addEventListener('load', setFullHeight);
+setFullHeight();
