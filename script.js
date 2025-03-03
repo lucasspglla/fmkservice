@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    gsap.utils.toArray([".phones-title", ".service-title", ".gallery-wrapper-father", "gallery-h2-1", "gallery-h2-2", "gallery-h2-3"]).forEach(element => {
+    gsap.utils.toArray([".phones-title", ".service-title", ".gallery-wrapper-father", "gallery-h2-1", "gallery-h2-2", "gallery-h2-3", ".ubication-container", ".ultimate-title-ubication"]).forEach(element => {
         gsap.to(element, {
             y: 0,
             opacity: 1,
@@ -73,7 +73,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
     
-    gsap.utils.toArray([".phones-paragraph", ".service-paragraph", ".gallery-title"]).forEach(element => {
+    gsap.utils.toArray([".phones-paragraph", ".service-paragraph", ".gallery-title", ".ubication-title"]).forEach(element => {
         gsap.to(element, {
             y: 0,
             opacity: 1,
